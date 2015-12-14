@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>百度音乐</title>
+<style>
+ul,input{margin:0;padding:0;}
+li{list-style:none;}
+#wrap{width:312px;height:218px;margin:100px auto;border:1px solid #999999;position:relative;}
+
+#wrap ul{border-bottom:1px solid #dedede;}
+#wrap ul li{width:312px;height:30px;font-size:12px;position:relative;border-bottom:1px solid #fff;}
+#wrap ul li input{position:absolute;top:9px;left:16px;}
+#wrap ul li strong{font-weight:normal;position:absolute;line-height:30px;left:44px;}
+#wrap ul li span{position:absolute;left:208px;line-height:30px;}
+#wrap ul #last{border-bottom:none;}
+
+#wrap #all{position:absolute;bottom:10px;left:16px;}
+#wrap #alls{position:absolute;bottom:10px;left:44px;font-size:12px;}
+#wrap #move{position:absolute;bottom:3px;right:0px;width:223px;height:25px;}
+#wrap  #move input{width:63px;height:23px;border:1px solid #efefef;border-radius:5px;background:#fff;text-indent:24px;outline:none;}
+#wrap  #move #sc{background:url(musicPic/sc.png) no-repeat 9px 6px;}
+#wrap  #move #add{background:url(musicPic/add.png) no-repeat 9px 6px; }
+#wrap  #move #delete{background:url(musicPic/delete.png) no-repeat 9px 6px;}
+</style>
+<script>
+	window.onload = function(){
+		var wrap = document.getElementById('wrap');
+		var oUl = wrap.getElementsByTagName('ul')[0];
+		var aLi = oUl.getElementsByTagName('li');
+		var aInp = oUl.getElementsByTagName('input');
+		var all = document.getElementById('all');
+		var move = document.getElementById('move');//opacity:0.5;
+		var arr = ['#f7ffff','#fff'];
+		var flag = -1;
+		
+		opa();
+		
+		for(var i=0;i<aLi.length;i++){
+			aLi[i].style.background = arr[i%2]; 
+			aLi[i].oldc = arr[i%2];
+		}
+		
+		for(var i=0;i<aLi.length;i++){
+			aInp[i].index = i;
+			aLi[i].index = i;
+			aLi[i].onmouseover = function(){
+				aLi[this.index].style.background = '#efefef';	
+			};
+			aLi[i].onmouseout = function(){
+				if(!aInp[this.index].checked){
+					aLi[this.index].style.background = aLi[this.index].oldc;
+				}
+			};
+			aInp[i].onclick = function(){
+				if(this.checked){
+					aLi[this.index].style.background = '#efefef';
+					flag ++;
+					move.style.opacity = '0.5';
+					opa();
+				}else{
+					aLi[this.index].style.background = aLi[this.index].oldc;
+					flag --;
+					opa();
+				}
+				if(flag<5){all.checked = false;}	
+				if(flag==5){all.checked = true;}
+			};
+		}
+		all.onclick = function(){
+			if(this.checked){
+				flag = 5;
+				opa();
+				for(var i=0;i<aInp.length;i++){
+					aInp[i].checked = true;
+					aLi[i].style.background = '#efefef';
+				}
+			}else{
+				flag = -1;
+				opa();
+				for(var j=0;j<aInp.length;j++){
+					aInp[j].checked = false;
+					aLi[j].style.background = aLi[j].oldc ;
+				}
+			}
+		};
+		function opa(){
+			if(flag <0){
+				move.style.opacity = '0.5';
+			}else{
+				move.style.opacity = '1';
+			}
+		};
+		
+		
+		
+		
+	};
+</script>
+</head>
+
+<body>
+<div id="wrap">
+	<ul>
+		<li>
+			<input type="checkbox" /><strong>私奔</strong><span>梁博</span>
+		</li>
+		<li>
+			<input type="checkbox" /><strong>北京北京</strong><span>梁博，黄勇</span>
+		</li>
+		<li>
+			<input type="checkbox" /><strong>我爱你中国</strong><span>梁博</span>
+		</li>
+		<li>
+			<input type="checkbox" /><strong>花火</strong><span>梁博</span>
+		</li>
+		<li>
+			<input type="checkbox" /><strong>回来</strong><span>梁博</span>
+		</li>
+		<li id="last">
+			<input type="checkbox" /><strong>爱要有你才完美</strong><span>梁博，那英</span>
+		</li>
+	</ul>
+	<input id="all" type="checkbox" /><span id="alls">全选</span>
+	<div id="move">	
+		<input id="sc" type="button" value="收藏" />
+		<input id="add" type="button" value="添加" />
+		<input id="delete" type="button" value="删除" />
+	</div>
+</div>
+</body>
+</html>
