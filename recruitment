@@ -1,0 +1,9 @@
+{"minAge":"unlimit","maxAge":"unlimit","sex":"unlimit","eduGrade":"unlimit","minWorkAge":"unlimit","maxWorkAge":"unlimit","liveProvince":"unlimit","liveCity":"unlimit"}
+
+
+
+
+
+
+alter table `recruitment_task` add resume_filter text comment '新简历过滤条件' after `status`;
+        洗数据的sql
