@@ -1,0 +1,88 @@
+{"minAge":"unlimit","maxAge":"unlimit","sex":"unlimit","eduGrade":"unlimit","minWorkAge":"unlimit","maxWorkAge":"unlimit","liveProvince":"unlimit","liveCity":"unlimit"}
+
+
+
+
+
+
+alter table `recruitment_task` add resume_filter text comment '新简历过滤条件' after `status`;
+#洗数据的sql
+update `recruitment_task` set resume_filter='{"sex":"unlimit","eduGrade":"unlimit","minWorkAge":"unlimit","maxWorkAge":"unlimit","liveProvince":"unlimit","liveCity":"unlimit"}';
+
+
+
+
+
+{"third_party_resume_id":"","company_id":"","name":"","mobile":"","email":"","head_image":"","sex":"{}","work_age":2,"company":"","now_job":"","apply_job_id":"","school":"","major":"","edu_grade":"","channel_type":"{}","resume":"","resume_pdf":"","resume_preview":"","type":"{}","read_status":"{}","third_party_account":"","resume_id":"","account_id":"","apply_time":1234567,"live_city":"邯郸市","crawler_type":"{}"}
+
+
+
+
+{"third_party_resume_id":"976be3cf82d54dffb2efd31b4a481b88","company_id":"08b723c49aaa4a8db140560654ac315b","name":"郭晓燕","mobile":"18610028130","email":"guoxiaoyan@qijiayoudao.com","head_image":"","sex":"WOMEN","work_age":6,"company":"IBM","now_job":"java开发","apply_job_id":"7cfc7912930d4fca9bd719f08992d9bb","school":"河北科技师范学院","major":"计算机科学与技术","edu_grade":3,"channel_type":"LAGOU","resume":"V200e3lgfdJVrEZAtomGwWQ4OWIyNDI4ODI3M2FkMWUyZWU0ZDM2YWUxMGJhNjU1MmIwYzFkOWNlMjMyYjU3NDVhM2FhZTc2OTFkYzQyZTLeot6nlf2ak+Fc13riNSmM8txz9kw0mDCsZCF3I/mHSM5hM15l0r84sEsatxabEdGpg+aUSMls+TYnxtwp55kMF7V509thj7U+41S0z00JqqM9no6dsR1zEBlS31SUUQg=","resume_pdf":"V200e3lgfdJVrEZAtomGwWQ4OWIyNDI4ODI3M2FkMWUyZWU0ZDM2YWUxMGJhNjU1MmIwYzFkOWNlMjMyYjU3NDVhM2FhZTc2OTFkYzQyZTLeot6nlf2ak+Fc13riNSmM8txz9kw0mDCsZCF3I/mHSM5hM15l0r84sEsatxabEdGpg+aUSMls+TYnxtwp55kMF7V509thj7U+41S0z00JqqM9no6dsR1zEBlS31SUUQg=","resume_preview":"1EetZ1axTWlGs54+1iicKDJiNjJlYmY3M2U2NDI4M2Q1MmY2Mzc3MDZjZWRmMzRhMzZlMTE0ODVhZDA3YzBmZWJjN2VlYjVkNTE2Mjg1ZWF8pg7C5dIjuBLoE4g+rJEnKtS8EZiAcpX3kRet+NMteHG32NNID0Q5vlmFfyH85Pengu5WWmSX2utuBPuYGG1ALMoAXJ4hq3x0HCAtwYYSYEsyyunED4XpIeeU6/xeiBA=","type":"NEW_RESUME","read_status":"NO_READ","third_party_account":"18046523142","resume_id":"","apply_time":1502777006,"live_city":"邯郸市","crawler_type":"PAGE","setThird_party_resume_id":true,"setCompany_id":true,"setName":true,"setMobile":true,"setEmail":true,"setHead_image":true,"setSex":true,"setWork_age":true,"setCompany":true,"setNow_job":true,"setApply_job_id":true,"setSchool":true,"setMajor":true,"setEdu_grade":true,"setChannel_type":true,"setResume":true,"setResume_pdf":true,"setResume_preview":true,"setType":true,"setRead_status":true,"setThird_party_account":true,"setResume_id":true,"setAccount_id":false,"setApply_time":true,"setLive_city":true,"setCrawler_type":true}
+
+
+
+
+
+localhost:9050/thrift/recrtuiment/test?model={"third_party_resume_id":"976be3cf82d54dffb2efd31b4a481b88","company_id":"08b723c49aaa4a8db140560654ac315b","name":"郭晓燕","mobile":"18610028130","email":"guoxiaoyan@qijiayoudao.com","head_image":"","sex":"MAN","work_age":2,"company":"IBM","now_job":"java开发","apply_job_id":"7cfc7912930d4fca9bd719f08992d9bb","school":"河北科技师范学院","major":"计算机科学与技术","edu_grade":5,"channel_type":"LAGOU","resume":"V200e3lgfdJVrEZAtomGwWQ4OWIyNDI4ODI3M2FkMWUyZWU0ZDM2YWUxMGJhNjU1MmIwYzFkOWNlMjMyYjU3NDVhM2FhZTc2OTFkYzQyZTLeot6nlf2ak+Fc13riNSmM8txz9kw0mDCsZCF3I/mHSM5hM15l0r84sEsatxabEdGpg+aUSMls+TYnxtwp55kMF7V509thj7U+41S0z00JqqM9no6dsR1zEBlS31SUUQg=","resume_pdf":"V200e3lgfdJVrEZAtomGwWQ4OWIyNDI4ODI3M2FkMWUyZWU0ZDM2YWUxMGJhNjU1MmIwYzFkOWNlMjMyYjU3NDVhM2FhZTc2OTFkYzQyZTLeot6nlf2ak+Fc13riNSmM8txz9kw0mDCsZCF3I/mHSM5hM15l0r84sEsatxabEdGpg+aUSMls+TYnxtwp55kMF7V509thj7U+41S0z00JqqM9no6dsR1zEBlS31SUUQg=","resume_preview":"1EetZ1axTWlGs54+1iicKDJiNjJlYmY3M2U2NDI4M2Q1MmY2Mzc3MDZjZWRmMzRhMzZlMTE0ODVhZDA3YzBmZWJjN2VlYjVkNTE2Mjg1ZWF8pg7C5dIjuBLoE4g+rJEnKtS8EZiAcpX3kRet+NMteHG32NNID0Q5vlmFfyH85Pengu5WWmSX2utuBPuYGG1ALMoAXJ4hq3x0HCAtwYYSYEsyyunED4XpIeeU6/xeiBA=","type":"NEW_RESUME","read_status":"NO_READ","third_party_account":"18046523142","resume_id":"","apply_time":1502777006,"live_city":"河北省","crawler_type":"PAGE","setThird_party_resume_id":true,"setCompany_id":true,"setName":true,"setMobile":true,"setEmail":true,"setHead_image":true,"setSex":true,"setWork_age":true,"setCompany":true,"setNow_job":true,"setApply_job_id":true,"setSchool":true,"setMajor":true,"setEdu_grade":true,"setChannel_type":true,"setResume":true,"setResume_pdf":true,"setResume_preview":true,"setType":true,"setRead_status":true,"setThird_party_account":true,"setResume_id":true,"setAccount_id":false,"setApply_time":true,"setLive_city":true,"setCrawler_type":true}
+
+
+
+
+
+976be3cf82d54dffb2efd31b4a481b88
+976be3cf82d54dffb2efd31b4a481b88
+
+
+
+08b723c49aaa4a8db140560654ac315b        7cfc7912930d4fca9bd719f08992d9bb       1
+KEY `uuid_index` (`uuid`),
+  KEY `third_party_resume_id_index` (`third_party_resume_id`),
+  KEY `apply_job_id_index` (`apply_job_id`(32)),
+  KEY `company_id_index` (`company_id`),
+  KEY `group_live_city_index` (`company_id`,`live_city_area_id`),
+  KEY `group_type_index` (`company_id`,`type`,`type_status`),
+  KEY `apply_time_index` (`apply_time`),
+  KEY `company_id_apply_time_index` (`company_id`,`apply_time`)
+\\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		//检查年龄
+        String minAge = resumeFilterDO.getMinAge();
+        String maxAge = resumeFilterDO.getMaxAge();
+        if (!checkAge(minAge, RecruitmentTaskConstant.MIN_AGE, RecruitmentTaskConstant.MAX_AGE)
+                || !checkAge(maxAge, RecruitmentTaskConstant.MIN_AGE, RecruitmentTaskConstant.MAX_AGE)) {
+            throw new UserException("招聘任务简历过滤年龄错误");
+        } else if (isNumber(minAge) && isNumber(maxAge) && Integer.valueOf(minAge)>Integer.valueOf(maxAge)) {
+            throw new UserException("招聘任务简历过滤最小年龄不能大于最大年龄");
+        }
