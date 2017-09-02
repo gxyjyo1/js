@@ -63,7 +63,7 @@ KEY `uuid_index` (`uuid`),
 
 
 
-
+alter table `resume_info` add `crawler_type` tinyint(4) NOT NULL DEFAULT '0' COMMENT '抓取类型0页面1邮箱';
 
 
 
